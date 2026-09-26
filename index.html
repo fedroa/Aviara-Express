@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviara Express — Pengiriman Drone Otomatis Bertenaga AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#beranda" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke="#63D4FF" stroke-width="1.4"/>
+        <path d="M20 8 L27 20 L20 32 L13 20 Z" fill="#FF8F5E"/>
+        <circle cx="20" cy="20" r="3.2" fill="#0E1526"/>
+      </svg>
+      <span class="brand-text"><b>Aviara Express</b><span>pengiriman otomatis</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#tentang">Tentang</a>
+      <a href="#cara-kerja">Cara Kerja</a>
+      <a href="#koordinat">Titik Lokasi</a>
+      <a href="#lacak">Lacak Pesanan</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pesan" class="btn btn-primary btn-sm">Pesan Sekarang</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Layanan kirim udara bertenaga AI · Khusus Surabaya</div>
+        <h1>Kirim barangmu lewat langit, <em>tanpa nunggu kurir</em>.</h1>
+        <p class="hero-sub">Aviara Express menerbangkan paketmu dengan drone yang diatur penuh oleh AI kami — mulai dari menghitung rute, memantau penerbangan, sampai membetulkan sendiri kalau ada gangguan di jalan. Kamu cukup kasih titik lokasi, sisanya kami yang urus.</p>
+        <p class="hero-sub" style="margin-top:10px;">Saat ini Aviara Express baru melayani pengiriman dalam wilayah <strong style="color:var(--text-light)">Kota Surabaya</strong> dan sekitarnya. Pastikan titik jemput dan tujuanmu masih berada dalam jangkauan area Surabaya sebelum memesan.</p>
+        <div class="hero-cta">
+          <a href="#pesan" class="btn btn-primary">Pesan Pengiriman</a>
+          <a href="#cara-kerja" class="btn btn-ghost">Lihat Cara Kerjanya</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><b>&lt; 30 menit</b><span>rata-rata waktu antar dalam radius jangkauan</span></div>
+          <div class="trust-item"><b>100% titik koordinat</b><span>bukan alamat jalan yang bisa keliru</span></div>
+          <div class="trust-item"><b>Privat</b><span>lacak hanya bisa dibuka pengirim &amp; penerima</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="flight-card">
+          <svg viewBox="0 0 420 300" aria-hidden="true">
+            <defs>
+              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1D2A48"/>
+                <stop offset="100%" stop-color="#151E36"/>
+              </linearGradient>
+              <path id="flightPath" d="M50,230 C120,120 260,260 370,70" fill="none"/>
+            </defs>
+            <rect x="0" y="0" width="420" height="300" rx="16" fill="url(#skyGrad)"/>
+            <g opacity="0.22" stroke="#2A385C">
+              <line x1="0" y1="75" x2="420" y2="75"/>
+              <line x1="0" y1="150" x2="420" y2="150"/>
+              <line x1="0" y1="225" x2="420" y2="225"/>
+            </g>
+            <!-- stylized Surabaya map, zoomed out: coastline strip, Kalimas river, wide district grid -->
+            <path d="M420,0 L420,300 L395,300 C405,230 388,150 400,70 C406,40 398,15 407,0 Z" fill="#182241" opacity="0.85"/>
+            <path d="M420,0 L420,300 L395,300 C405,230 388,150 400,70 C406,40 398,15 407,0 Z" fill="none" stroke="#3D5A80" stroke-width="1"/>
+            <path d="M95,300 C115,235 90,175 120,140 C155,100 140,55 175,15" fill="none" stroke="#2E67A8" stroke-width="2.4" opacity="0.45" stroke-linecap="round"/>
+            <g opacity="0.28" stroke="#3D5A80" stroke-width="1">
+              <line x1="40" y1="0" x2="70" y2="300"/>
+              <line x1="150" y1="0" x2="180" y2="300"/>
+              <line x1="260" y1="0" x2="290" y2="300"/>
+            </g>
+            <g opacity="0.7">
+              <circle cx="215" cy="185" r="2.4" fill="#5E7CB0"/>
+              <text x="221" y="189" fill="#5E7CB0" font-size="9" font-family="IBM Plex Mono, monospace">Wonokromo</text>
+              <circle cx="140" cy="95" r="2.4" fill="#5E7CB0"/>
+              <text x="146" y="99" fill="#5E7CB0" font-size="9" font-family="IBM Plex Mono, monospace">Tunjungan</text>
+              <circle cx="330" cy="230" r="2.4" fill="#5E7CB0"/>
+              <text x="336" y="234" fill="#5E7CB0" font-size="9" font-family="IBM Plex Mono, monospace">Kenjeran</text>
+            </g>
+            <text x="401" y="26" fill="#5E7CB0" font-size="9.5" font-family="IBM Plex Mono, monospace" opacity="0.75" text-anchor="end">SELAT MADURA</text>
+            <text x="22" y="34" fill="#9AB0DE" font-size="15" font-family="Space Grotesk, sans-serif" letter-spacing="2" font-weight="600">SURABAYA</text>
+            <use href="#flightPath" stroke="#3D5A80" stroke-width="1.6" stroke-dasharray="4 6"/>
+            <circle cx="50" cy="230" r="6" fill="#FF8F5E"/>
+            <circle cx="370" cy="70" r="6" fill="#63D4FF"/>
+            <text x="50" y="252" fill="#8CA0C6" font-size="11" font-family="IBM Plex Mono, monospace">ASAL</text>
+            <text x="340" y="58" fill="#8CA0C6" font-size="11" font-family="IBM Plex Mono, monospace">TUJUAN</text>
+            <g id="droneGlyph">
+              <circle r="9" fill="#FFD166"/>
+              <path d="M-5,-1 L5,-1 M-1,-5 L-1,5 M1,-5 L1,5" stroke="#0E1526" stroke-width="1.4" transform="scale(0.9)"/>
+              <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flightPath"/>
+              </animateMotion>
+            </g>
+          </svg>
+          <div class="coord-chip">
+            <span>-7.257472, 112.752088 → -7.289965, 112.734283</span>
+            <small>contoh format titik koordinat</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / BRIDGING -->
+  <section id="tentang">
+    <div class="wrap about-grid">
+      <div>
+        <div class="eyebrow">Tentang Aviara Express</div>
+        <h2>Bukan kurir yang naik motor. Ini armada yang naik angin.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Aviara Express membangun jalur pengiriman baru yang lepas dari kemacetan, jam sibuk, dan antrean kurir. Seluruh proses, mulai dari pesananmu masuk, drone dipersiapkan, rute dihitung, sampai barang mendarat di titik tujuan, dijalankan oleh sistem AI kami sendiri.</p>
+        <p>Bukan berarti tidak ada yang mengawasi. AI kami memantau setiap penerbangan secara aktif dan langsung mengambil keputusan sendiri saat terjadi kendala, entah itu cuaca berubah, sinyal lemah, atau rute yang perlu dialihkan, supaya paketmu tetap sampai tanpa kamu perlu ikut repot.</p>
+        <div class="about-stats">
+          <div class="stat-card"><b>Terhitung otomatis</b><span>rute dihitung ulang begitu ada gangguan</span></div>
+          <div class="stat-card"><b>Terpantau tiap detik</b><span>penerbangan diawasi dari lepas landas sampai mendarat</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / VALUE PROPS -->
+  <section id="kenapa" style="background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="eyebrow">Kenapa pakai Aviara Express</div>
+      <h2 style="font-size:clamp(24px,3vw,32px); max-width:520px;">Dibuat supaya barangmu sampai dengan tepat dan tetap jadi urusanmu sendiri.</h2>
+      <div class="card-row">
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="#63D4FF" stroke-width="1.6"/><path d="M20 11v9l6 4" stroke="#63D4FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <h3>Titik koordinat, bukan alamat</h3>
+          <p>Nama jalan bisa bikin drone salah arah. Koordinat memastikan drone mendarat tepat di titik yang kamu maksud, sampai ke halaman rumahmu.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="6" y="6" width="28" height="28" rx="8" stroke="#FF8F5E" stroke-width="1.6"/><path d="M13 20l5 5 9-11" stroke="#FF8F5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Diperbaiki sendiri saat ada gangguan</h3>
+          <p>Kalau rute terhalang atau cuaca berubah, AI kami langsung menyesuaikan penerbangan secara otomatis, tanpa harus menunggu keputusan manusia.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 6l12 6v8c0 8-5 13-12 14C13 33 8 28 8 20v-8l12-6z" stroke="#FFD166" stroke-width="1.6"/></svg>
+          <h3>Lacak yang cuma kamu bisa buka</h3>
+          <p>Setiap pesanan punya kode dan PIN sendiri. Tanpa keduanya, status dan lokasi paketmu tidak bisa dilihat siapa pun, termasuk orang lain di sekitar titik antar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="cara-kerja">
+    <div class="wrap">
+      <div class="eyebrow">Cara kerja</div>
+      <h2 style="font-size:clamp(24px,3vw,32px); max-width:480px;">Empat langkah, dari kamu pesan sampai barang mendarat.</h2>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Masukkan titik lokasi</h3><p>Isi koordinat jemput dan tujuan, lengkap dengan detail barangnya.</p></div>
+        <div class="step"><div class="num">02</div><h3>AI menyusun rute</h3><p>Sistem menghitung jalur udara tercepat dan paling aman untuk drone.</p></div>
+        <div class="step"><div class="num">03</div><h3>Drone lepas landas</h3><p>Penerbangan berjalan sendiri, dipantau AI kami dari awal sampai akhir.</p></div>
+        <div class="step"><div class="num">04</div><h3>Barang mendarat</h3><p>Drone mendarat tepat di koordinat tujuan dan penerima mendapat notifikasi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COORDINATE GUIDE -->
+  <section id="koordinat" class="coord-section">
+    <div class="wrap coord-inner">
+      <div>
+        <div class="eyebrow">Soal titik lokasi</div>
+        <h2>Kenapa kami minta koordinat, bukan nama jalan?</h2>
+        <p>Nama jalan sering ambigu, satu nama bisa ada di beberapa gang atau bahkan beberapa daerah. Titik koordinat memastikan drone tahu persis ke mana harus terbang, sampai ke titik yang kamu maksud, bukan sekadar "daerah situ".</p>
+        <div class="coord-example">📍 -7.257472, 112.752088</div>
+        <div style="margin-top:26px;">
+          <button class="btn btn-primary" id="openCoordGuide">Cara Menyalin Koordinat dari Peta</button>
+        </div>
+      </div>
+      <div class="coord-mini-map">
+        <svg viewBox="0 0 320 220" aria-hidden="true">
+          <rect width="320" height="220" rx="14" fill="#151E36"/>
+          <g opacity="0.4" stroke="#2A385C">
+            <line x1="0" y1="55" x2="320" y2="55"/><line x1="0" y1="110" x2="320" y2="110"/><line x1="0" y1="165" x2="320" y2="165"/>
+            <line x1="80" y1="0" x2="80" y2="220"/><line x1="160" y1="0" x2="160" y2="220"/><line x1="240" y1="0" x2="240" y2="220"/>
+          </g>
+          <path d="M160 60 v50 M144 92 h32" stroke="#FF8F5E" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="160" cy="60" r="5" fill="#FF8F5E"/>
+          <rect x="108" y="128" width="104" height="30" rx="6" fill="#1D2A48" stroke="#2A385C"/>
+          <text x="160" y="147" fill="#63D4FF" font-size="11" text-anchor="middle" font-family="IBM Plex Mono, monospace">-7.2575, 112.7521</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section id="pesan" class="order-section">
+    <div class="wrap">
+      <div class="eyebrow">Pesan pengiriman</div>
+      <h2 style="font-size:clamp(24px,3vw,32px); max-width:480px;">Isi titik jemput dan tujuan, sisanya biar Aviara Express yang terbangkan.</h2>
+
+      <div class="order-grid" style="margin-top:36px;">
+        <form class="form-card" id="orderForm" novalidate>
+          <div class="divider-label">Data pengirim</div>
+          <div class="form-row">
+            <div class="field">
+              <label for="senderName">Nama pengirim</label>
+              <input type="text" id="senderName" placeholder="Nama lengkap" required>
+            </div>
+            <div class="field">
+              <label for="senderPhone">Nomor HP pengirim</label>
+              <input type="tel" id="senderPhone" placeholder="08xx xxxx xxxx" required>
+            </div>
+          </div>
+          <div class="field coord-field">
+            <label for="pickupCoord">Koordinat titik jemput</label>
+            <input type="text" id="pickupCoord" placeholder="-7.257472, 112.752088">
+            <button type="button" class="locate-btn" id="useMyLocation">📍 Lokasi Saya</button>
+            <span class="field-error">Format koordinat belum sesuai, contoh: -7.257472, 112.752088</span>
+          </div>
+
+          <div class="divider-label">Data penerima</div>
+          <div class="form-row">
+            <div class="field">
+              <label for="receiverName">Nama penerima</label>
+              <input type="text" id="receiverName" placeholder="Nama lengkap" required>
+            </div>
+            <div class="field">
+              <label for="receiverPhone">Nomor HP penerima</label>
+              <input type="tel" id="receiverPhone" placeholder="08xx xxxx xxxx" required>
+            </div>
+          </div>
+          <div class="field coord-field">
+            <label for="dropoffCoord">Koordinat titik tujuan</label>
+            <input type="text" id="dropoffCoord" placeholder="-7.289965, 112.734283">
+            <button type="button" class="locate-btn" id="copyGuideBtn">❓ Cara Ambil</button>
+            <span class="field-error">Format koordinat belum sesuai, contoh: -7.289965, 112.734283</span>
+          </div>
+
+          <div class="divider-label">Detail barang</div>
+          <div class="form-row">
+            <div class="field">
+              <label for="itemType">Jenis barang</label>
+              <input type="text" id="itemType" placeholder="Contoh: dokumen, makanan, elektronik kecil">
+            </div>
+            <div class="field">
+              <label for="itemWeight">Estimasi berat (kg)</label>
+              <input type="number" id="itemWeight" step="0.1" min="0" max="5" placeholder="Maks 5 kg">
+            </div>
+          </div>
+          <div class="field">
+            <label for="itemNote">Catatan tambahan (opsional)</label>
+            <textarea id="itemNote" rows="3" placeholder="Instruksi khusus untuk pengantaran"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">Buat Pesanan</button>
+        </form>
+
+        <div>
+          <div class="order-side">
+            <div class="side-card">
+              <h4>🔒 Titik lokasimu tetap privat</h4>
+              <p>Koordinat jemput dan tujuan hanya digunakan untuk mengarahkan drone. Kode dan PIN pelacakan cuma dikirim ke nomor HP pengirim, tidak ditampilkan di halaman mana pun.</p>
+            </div>
+            <div class="side-card">
+              <h4>🛠️ Kalau ada kendala</h4>
+              <p>AI kami menyesuaikan rute secara otomatis saat terjadi gangguan. Kamu akan mendapat notifikasi kalau ada perubahan berarti pada jadwal antar.</p>
+            </div>
+          </div>
+          <div class="confirm-card" id="confirmCard">
+            <h3>Pembayaran dikonfirmasi</h3>
+            <p style="color:var(--text-muted); font-size:14px;">Simpan kode dan PIN ini untuk melacak pesananmu. Keduanya hanya berlaku untuk pesanan ini.</p>
+            <div class="confirm-code-row">
+              <div class="code-box"><span>Kode pesanan</span><b id="outCode">—</b></div>
+              <div class="code-box"><span>PIN pelacakan</span><b id="outPin">—</b></div>
+            </div>
+            <div class="confirm-warn">Jangan bagikan kode dan PIN ini ke orang lain selain penerima barangmu, siapa pun yang tahu keduanya bisa membuka status dan lokasi pesanan ini.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK -->
+  <section id="lacak" class="track-section">
+    <div class="wrap track-inner">
+      <div class="eyebrow">Lacak pesanan</div>
+      <h2 style="font-size:clamp(24px,3vw,32px);">Masukkan kode dan PIN untuk melihat status pesananmu.</h2>
+      <p style="color:var(--text-muted); margin-top:12px;">Halaman ini hanya menampilkan pesanan yang cocok dengan kode dan PIN yang kamu masukkan, tidak ada daftar pesanan lain yang bisa dilihat siapa pun.</p>
+      <form class="track-form" id="trackForm">
+        <input type="text" id="trackCode" placeholder="Kode pesanan, contoh: ELG-7F3K2A" required>
+        <input type="text" id="trackPin" placeholder="PIN 4 digit" maxlength="4" required>
+        <button type="submit" class="btn btn-primary">Lacak</button>
+      </form>
+
+      <div class="track-empty" id="trackEmpty">Kode atau PIN tidak cocok. Periksa kembali pesan konfirmasi pesananmu.</div>
+
+      <div class="track-result" id="trackResult">
+        <div class="track-status-card">
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <div>
+              <div style="font-family:var(--font-mono); color:var(--accent-sky); font-size:13px;" id="trackResultCode">ELG-000000</div>
+              <h3 style="margin-top:6px; font-size:18px;" id="trackResultStatus">Diterima</h3>
+            </div>
+            <div style="text-align:right; font-size:13px; color:var(--text-faint);">
+              <div id="trackResultItem">—</div>
+            </div>
+          </div>
+          <ul class="track-timeline" id="trackTimeline"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2 style="font-size:clamp(24px,3vw,32px); max-width:480px;">Hal-hal yang paling sering ditanyakan.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Apa yang terjadi kalau drone menemui gangguan di tengah jalan?<span class="plus">+</span></button>
+          <div class="faq-a"><p>AI kami langsung menyesuaikan rute atau menunda sementara sampai kondisi aman, lalu melanjutkan penerbangan tanpa perlu kamu lakukan apa pun.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Apakah orang lain bisa melihat lokasi dan status pesananku?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Tidak. Status hanya bisa dibuka dengan kode pesanan dan PIN yang dikirim khusus ke nomor pengirim, tidak ada halaman publik yang menampilkan pesanan siapa pun.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Kenapa harus koordinat, tidak bisa alamat biasa?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Alamat jalan sering tumpang tindih antar daerah. Koordinat memastikan titik jemput dan antar akurat sampai ke lokasi persis yang kamu maksud.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Berapa berat maksimum barang yang bisa dikirim?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Saat ini kapasitas drone kami maksimal 5 kg per pengiriman, cocok untuk dokumen, makanan, dan barang elektronik kecil.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#beranda" class="brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" stroke="#63D4FF" stroke-width="1.4"/><path d="M20 8 L27 20 L20 32 L13 20 Z" fill="#FF8F5E"/><circle cx="20" cy="20" r="3.2" fill="#0E1526"/></svg>
+          <span class="brand-text"><b>Aviara Express</b><span>pengiriman otomatis</span></span>
+        </a>
+        <p>Layanan pengiriman drone yang diterbangkan penuh oleh AI, dari titik jemput sampai titik antar.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Jelajahi</h4>
+        <a href="#tentang">Tentang Aviara Express</a>
+        <a href="#cara-kerja">Cara Kerja</a>
+        <a href="#koordinat">Titik Lokasi</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <a href="#pesan">Pesan Pengiriman</a>
+        <a href="#lacak">Lacak Pesanan</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aviara Express. Layanan kirim udara bertenaga AI.</span>
+      <span>Dibuat untuk pengiriman yang lebih tepat titik.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- PAYMENT MODAL (popup on order submit) -->
+<div class="modal-backdrop" id="paymentModal">
+  <div class="modal" style="max-width:440px;">
+    <button class="modal-close" id="closePayment" aria-label="Tutup">✕</button>
+    <h3>Selesaikan pembayaran</h3>
+    <div class="modal-sub">Pesanan <b id="payOrderCode" style="color:var(--accent-sky); font-family:var(--font-mono);">—</b> — ongkos kirim dihitung dari jarak titik jemput ke tujuan.</div>
+
+    <div class="pay-amount"><span>Total tagihan</span><b id="payAmount">Rp 0</b></div>
+
+    <div class="pay-tabs">
+      <button type="button" class="pay-tab active" data-tab="transfer">Transfer Bank</button>
+      <button type="button" class="pay-tab" data-tab="qris">QRIS</button>
+    </div>
+
+    <div class="pay-panel" id="panelTransfer">
+      <div class="pay-img-box"><img src="bank-transfer-dummy.svg" alt="Info rekening transfer bank (dummy)"></div>
+      <p class="pay-hint">Transfer sesuai nominal di atas ke rekening pada gambar, lalu tekan tombol konfirmasi di bawah.</p>
+    </div>
+
+    <div class="pay-panel" id="panelQris" style="display:none;">
+      <div class="pay-img-box qris-img-box"><img src="qris-dummy.svg" alt="Kode QRIS pembayaran (dummy)"></div>
+      <p class="pay-hint" style="text-align:center;">Pindai kode di atas dengan aplikasi m-banking atau e-wallet pendukung QRIS.</p>
+    </div>
+
+    <span class="dummy-flag">⚠ Gambar dummy — ganti dengan nomor rekening &amp; QRIS asli</span>
+    <div class="confirm-warn">Ini tampilan simulasi pembayaran untuk keperluan demo. Gambar rekening dan QRIS di atas masih contoh (dummy), belum terhubung ke rekening sungguhan.</div>
+    <button type="button" class="btn btn-primary btn-block" id="confirmPayBtn" style="margin-top:16px;">Saya Sudah Bayar (Simulasi)</button>
+  </div>
+</div>
+
+<!-- COORD GUIDE MODAL -->
+<div class="modal-backdrop" id="coordModal">
+  <div class="modal">
+    <button class="modal-close" id="closeCoordGuide" aria-label="Tutup">✕</button>
+    <h3>Cara menyalin koordinat dari peta</h3>
+    <div class="modal-sub">Berlaku di Google Maps maupun aplikasi peta lain yang sejenis.</div>
+    <ul class="modal-steps">
+      <li><span class="n">1</span><span>Buka aplikasi peta, lalu cari atau geser ke lokasi jemput atau tujuan.</span></li>
+      <li><span class="n">2</span><span>Tekan dan tahan (tap and hold) titik lokasinya sampai muncul pin merah.</span></li>
+      <li><span class="n">3</span><span>Ketuk kotak koordinat yang muncul di bawah layar untuk menyalinnya.</span></li>
+      <li><span class="n">4</span><span>Tempelkan (paste) koordinat itu ke kolom titik lokasi di formulir Aviara Express.</span></li>
+    </ul>
+    <div class="modal-note">Gunakan koordinat, bukan nama jalan, supaya drone kami mendarat tepat di titik yang kamu maksud.</div>
+  </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
